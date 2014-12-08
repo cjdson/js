@@ -47,6 +47,6 @@ var cjdson=new CJDSON(example);
 console.log(cjdson.toString());
 console.log(cjdson.parse());
 
-new CJDSON(JSON.stringify({"pew":"pew"}))
+new CJDSON('{"pew":"pew"\// comments...\n,"key":"val"\n}')
   .print();
 ```
