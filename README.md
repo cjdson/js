@@ -5,6 +5,8 @@ js
 
 cjdson is json with C style line and block comments
 
+## What does it look like?
+
 ```cjdson
 {
   /*  JSON.parse won't be able to make sense of this
@@ -24,4 +26,24 @@ cjdson is json with C style line and block comments
     }
   }
 }
+```
+
+## How do we use this library?
+
+
+```Javascript
+var CJDSON=require("./CJDSON.js");
+
+var example=
+  '{ \// lel\n'+
+  '  "key":"val" // as per usual\n'+
+  '  ,"pew":"pew" // throw in whatever valid JSON you want\n'+
+  '  \/*  multiline comments!\n'+
+  '      FTW   *\/\n'+
+  '}';
+
+var cjdson=new CJDSON(example);
+
+console.log(cjdson.toString());
+console.log(cjdson.toJSON());
 ```
