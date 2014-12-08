@@ -14,14 +14,13 @@ var CJDSON={};
 */
 
 var CJDSON=function(cjdobj){
-
   this.source=cjdobj;
 
   this.toString=function(){
     return this.source;
   };
 
-  this.parse=function(){ // cjdO is text, not an object
+  this.parse=parse=function(){ // cjdO is text, not an object
     return JSON.parse(this.source // Parse the results of this expression
     .split("\n") // split by newlines to deal with line comments
     .map(function(line,index){ // iterate over line in the resulting array
@@ -33,13 +32,15 @@ var CJDSON=function(cjdobj){
   }; // Enjoy your cool and refreshing JSON.
 
   // pretty printing...
+  this.print=function(){
+    console.log(this.parse());
+  };
 
   // stringify...
 
   // ???
 
   // profit
-
 };
 
 module.exports=CJDSON; // return this object

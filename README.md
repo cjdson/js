@@ -42,8 +42,11 @@ var example=
   '      FTW   *\/\n'+
   '}';
 
-var CJDSON=new CJDSON(example);
+var cjdson=new CJDSON(example);
 
-console.log(CJDSON.toString());
-console.log(CJDSON.parse());
+console.log(cjdson.toString());
+console.log(cjdson.parse());
+
+new CJDSON(JSON.stringify({"pew":"pew"}))
+  .print();
 ```
